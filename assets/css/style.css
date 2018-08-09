@@ -1,0 +1,15 @@
+.btn-success{
+ background-color: green;
+};
+
+.btn-info {
+background-color: white;
+};
+
+.btn-danger {
+    background-color: red;
+};
+
+#remaining-time {
+    display: none;
+}
