@@ -11,27 +11,32 @@
 
 <body>
 
-    <h1>Trivia Game</h1>
-    <div id="game">
-        <div id="remaining-time" class="lead"> Time left: 
-            <span id="timer"></span>
+    <div class="container">
+        <div id="gameContainer">
+            <div id="heading1" class="ontop">
+                <h1>Trivia Game</h1>
+            </div>
+            <div id="game">
+                <div id="remaining-time" class="lead"> Time left:
+                    <span id="timer"></span>
+                </div>
+                <p id="question" class="lead"></p>
+
+            </div>
+
+            <div id="choices" class="text-center">
+                <button id="start">Start Game</button>
+                <div id="options"></div>
+            </div>
+
+            <div id="results"></div>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="./assets/javascript/app.js"></script>
         </div>
-        <p id="question" class="lead"></p>
-        
+
     </div>
-
-    <div id="choices" class="text-center">
-        <button id="start">Start Game</button>
-        <div id="options"></div>
-    </div>
-
-    <div id="results"></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/javascript/app.js"></script>
-
-
-
 
 </body>
 

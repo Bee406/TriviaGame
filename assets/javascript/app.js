@@ -10,22 +10,25 @@ var trivia = {
 
 
   questions: {
-    q1: "Question 1",
-    q2: "Question 2",
-    q3: "Question 3",
-    q4: "Question 4",
+    q1: "What is the most visited tourist attraction in the world?",
+    q2: "The Bahamas is one of the most popular destinations for U.S. residents to visit in the Caribbean. On average, how cold does it get in the Bahamas?",
+    q3: "Champagne is less than 100 miles away from Paris. How many bottles of Champagne are shipped around the country from there each year?",
+    q4: "Which major Canadian city has not hosted the Olympics?",
+    q5: " How many Smithsonian museums and galleries are in Washington, D.C.?",
   },
   options: {
-    q1: ["Answer 1", "Not the answer", "Definitely no", "Still not the answer"],
-    q2: ["Definitely no", "Still not the answer", "Answer 2", "Not the Answer"],
-    q3: ["Not the answer", "Answer 3", "Still not the answer", "Definitely no"],
-    q4: ["Still not the answer", "Definitely no", "Not the answer", "Answer 4"]
+    q1: ["Times Square", "Disney World", "The Colosseum", "Eiffel Tower"],
+    q2: ["40 degrees", "50 degrees", "60 degrees", "70 degrees"],
+    q3: ["1.5 million bottles", "322 million bottles", "525 million bottles", "1 billion bottles"],
+    q4: ["Montreal", "Toronto", "Calgary", "Vancouver"],
+    q5: ["10", "13", "17", "19"],
   },
   answers: {
-    q1: "Answer 1",
-    q2: "Answer 2",
-    q3: "Answer 3",
-    q4: "Answer 4",
+    q1: "Times Square",
+    q2: "70 degrees",
+    q3: "322 Million Bottles",
+    q4: "Toronto",
+    q5: "17",
   },
 
   
@@ -34,7 +37,6 @@ var trivia = {
     trivia.currentSet = 0;
     trivia.correct = 0;
     trivia.incorrect = 0;
-    trivia.unanswered = 0;
     clearInterval(trivia.timerId);
 
     // remove start button
@@ -49,7 +51,7 @@ var trivia = {
   // method to loop through and display questions and options 
   nextQuestion: function () {
 
-    // set timer to 20 seconds each question
+    // set timer to 10 seconds each question
     trivia.timer = 10;
     //    $('#timer').removeClass('last-seconds');
     $('#timer').text(trivia.timer);
@@ -94,9 +96,12 @@ var trivia = {
     else if (trivia.currentSet === Object.keys(trivia.questions).length) {
 
       // adds results of game (correct, incorrect, unanswered) to the page
+      var grade = (trivia.correct / 5).toFixed(2);
+      grade = grade * 100;
       $('#results').html('<h3>Thank you for playing!</h3>' +
           '<p>Correct: ' + trivia.correct + '</p>' +
-          '<p>Incorrect: ' + trivia.incorrect + '</p>');
+          '<p>Incorrect: ' + trivia.incorrect + '</p>' + 
+          '<p>Grade: ' + grade + '%</p>');
       // hide game sction
       $('#game').hide();
     }
@@ -124,7 +129,7 @@ var trivia = {
     // else the user picked the wrong option, increment incorrect
     else {
       // turn button clicked red for incorrect
-      $(this).addClass('btn-danger').removeClass('btn-info');
+      $(this).addClass('btn-incorrect').removeClass('btn-info');
 
       trivia.incorrect++;
       clearInterval(trivia.timerId);

@@ -6,10 +6,38 @@
 background-color: white;
 };
 
-.btn-danger {
+.btn-incorrect {
     background-color: red;
 };
 
 #remaining-time {
     display: none;
+}
+
+.container {
+    background-image: url("../images/background2.jpg");
+    background-size: 100%;
+    height: 960px;
+    background-repeat: no-repeat;
+    margin: auto;
+    padding-top:5%;
+    text-align: center;
+}
+
+h1{
+    margin-top:0;
+    background-color:white;
+
+}
+
+#gameContainer {
+    font-size: 30px;
+    background-color: white;
+    margin: 0 10%;
+    padding: 15px;
+}
+
+button {
+    padding: 5%;
+    font-size: 30px;
 }
