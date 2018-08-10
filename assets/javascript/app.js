@@ -35,6 +35,10 @@ var trivia = {
 
     startGame: function () {
 
+        correct = 0;
+        incorrect = 0;
+        currentIndex = 0;
+
         // hide start button
         $("#start").hide();
 
@@ -47,10 +51,10 @@ var trivia = {
     },
     // method to display all questions
     nextQuestion: function () {
-        
+
         //reset timer to 10 on each question
-         trivia.timer = 10;
-       
+        trivia.timer = 10;
+
         //add time left to timer text on page
         $("#timer").text(trivia.timer);
 
@@ -72,7 +76,7 @@ var trivia = {
         })
 
     },
-   
+
     timerRunning: function () {
         // if timer still has time left and there are still questions left to ask. 
         // "The Object.keys() method returns an array of a given object's property names, in the same order as we get with a normal loop."
